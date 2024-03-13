@@ -5,17 +5,19 @@ const performance = require('perf_hooks').performance;
 let startTime = performance.now();
 
 // 実行したいコードを入れる
-const test = (N,X,Y) => {
-	let count = 0;
-	for(let i=1; i<=N; i++){
-		if(i%X === 0 || i%Y===0){
-			count++;
+const test = (N,S,A) => {
+	for(let i=0; i<=N; i++){
+		for(let j=0; j<=N; j++){
+			console.log((A[i]+A[j]));
+			if(A[i]+A[j]===S){
+				return true;
+			}
 		}
 	}
-	return count;
+	return false;
 }
 
-console.log(test(15,3,5));
+console.log(test(3,11,[2,5,9]));
 
 // 終了時間を取得
 let endTime = performance.now();
