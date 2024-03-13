@@ -48,3 +48,34 @@ const test = (N,S,A) => {
 }
 
 console.log(test(3,11,[2,5,9]));
+
+//2.5.3
+const test = (N) => {
+  let ans = 1;
+  for (let i = 1; i <= N; i++) {
+    ans *= i;
+  }
+  return ans;
+};
+
+console.log(test(20));
+
+//2.5.4
+const test = (N) => {
+  for (let i = 2; i <= N; i++) {
+    if (sosu(i) === true) {
+      console.log(i);
+    }
+  }
+  return;
+};
+const sosu = (n) => {
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+console.log(test(23));
