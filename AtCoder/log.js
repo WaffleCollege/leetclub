@@ -79,3 +79,31 @@ const sosu = (n) => {
 };
 
 console.log(test(23));
+
+//AtCoder
+let N = [1,2,3,4,5];
+let K = 1000000000;
+
+let index = N.findIndex((element) => element >= K);
+console.log(index);
+
+//
+let N = [1,2,3,4,5];
+let K = 1000000000;
+
+let left = 0;
+let right = N.length - 1;
+let index = -1;
+
+while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+
+    if (N[mid] >= K) {
+        index = mid;
+        right = mid - 1;
+    } else {
+        left = mid + 1;
+    }
+}
+
+console.log(index);
